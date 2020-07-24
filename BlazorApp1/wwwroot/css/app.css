@@ -1267,14 +1267,14 @@ header label {
 }
 
 .qrcode {
-    width: 120px;
+    width: 240px;
     z-index: 99999;
     opacity: 0.8;
     margin: 20px auto 0;
 }
 
     .qrcode img {
-        width: 100%;
+        width: 50%;
     }
 
 .soul {

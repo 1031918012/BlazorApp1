@@ -1,24 +1,44 @@
 ﻿@page "/"
-    <div class="main">
-        <div class="container">
-            <div class="intro">
-                <div class="avatar">
-                    <a href="javascript:;">
-                        <img src="/Image/头像.jpg" />
-                    </a>
+<div class="main">
+    <div class="container">
+        <div class="intro">
+            <div class="avatar">
+                <a href="javascript:;">
+                    <img src="/Image/头像.jpg" />
+                </a>
+            </div>
+            <div class="nickname">𝓪𝓫𝓬主页 ▄︻┻━┳一</div>
+            <div class="description">
+                <p>去学习！去学习！</p>
+                <audio controls="controls">
+                    <source src="/Vedio/%e5%8e%bb%e5%ad%a6%e4%b9%a0.mp3" type="audio/mpeg" />
+                </audio>
+                <div class="qrcode" @onmouseover="Hover" @onmouseout="Hover">
+                    <img class="@NotQrCodeCssClass" src="../Image/timg.png" />
                 </div>
-                <div class="nickname">𝓪𝓫𝓬主页 ▄︻┻━┳一</div>
-                <div class="description">
-                    <img src="../Image/timg.gif" />
-                    <p>
-                        <audio controls="controls">
-                            <source src="/Vedio/%e5%8e%bb%e5%ad%a6%e4%b9%a0.mp3" type="audio/mpeg" />
-                        </audio>
-                    </p>
-                    <p>
-                        一首滚去学习，送给在座的各位
-                    </p>
+                <div>
+                    <img class="@QrCodeCssClass" src="../Image/fire.jpg" />
                 </div>
             </div>
         </div>
     </div>
+</div>
+@code{
+
+    /// <summary>
+    /// 是否隐藏
+    /// </summary>
+    private bool IsHidden = true;
+    /// <summary>
+    /// 二维码CSS
+    /// </summary>
+    private string QrCodeCssClass => IsHidden ? "hidden" : null;
+    /// <summary>
+    /// 二维码CSS
+    /// </summary>
+    private string NotQrCodeCssClass => IsHidden ? null : "hidden";
+    /// <summary>
+    /// 鼠标移入移出操作
+    /// </summary>
+    private void Hover() => IsHidden = !IsHidden;
+}

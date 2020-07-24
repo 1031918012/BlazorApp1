@@ -1,5 +1,11 @@
 ﻿@page "/record"
-    
+    <div>
+        <Pagination PageItems="3" PageItemsSource="@PageItems" TotalCount="30" OnPageClick="@OnPageClick" OnPageItemsChanged="@OnPageItemsChanged"></Pagination>
+    </div>
+@code{
+    private IEnumerable<int> PageItems => new int[] { 3, 10, 20, 40 };
+
+}
 @code {
 
 }
